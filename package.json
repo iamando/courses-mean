@@ -1,0 +1,18 @@
+{
+  "name": "ng-commerce",
+  "version": "1.0.0",
+  "description": "Course commerce node and angular",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "commerce"
+  ],
+  "author": "iamando",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^6.1.0",
+    "nodemon": "^2.0.7"
+  }
+}

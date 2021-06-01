@@ -1,0 +1,18 @@
+<div class="w-full h-full">
+  <div class="flex flex-col w-full h-full">
+    <section
+      [ngClass]="loading ? 'block' : 'hidden'"
+      class="w-full h-full flex justify-center items-center mt-80"
+    >
+      <app-loader></app-loader>
+    </section>
+
+    <section
+      [ngClass]="loading ? 'hidden' : 'block'"
+      class="text-indigo-200 body-font p-5 bg-gray-900 mt-2"
+      *ngFor="let course of courses"
+    >
+      <app-course-item [course]="course"></app-course-item>
+    </section>
+  </div>
+</div>

@@ -1,0 +1,70 @@
+<span>
+  <div class="mx-auto flex px-5 md:flex-row flex-col items-center jobcard">
+    <div
+      class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center"
+    >
+      <figure class="visible">
+        <div class="">
+          <div class="pt-10 px-2 sm:px-6">
+            <div *ngIf="course.isFeatured">
+              <span
+                class="inline-block py-1 px-2 rounded-full bg-green-600 text-white text-xs font-bold tracking-widest mb-2"
+                >Featured Courses</span
+              >
+            </div>
+
+            <h1
+              class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-100"
+            >
+              <a [routerLink]="['/courses/', course._id]"> {{ course.name }}</a>
+            </h1>
+            <p class="text-indigo-200 text-base pb-6">
+              {{ course.description }}
+            </p>
+            <h1
+              class="title-font sm:text-4xl text-3xl mb-4 font-bold text-gray-100"
+            >
+              ${{ course.price.toFixed(2) }}
+            </h1>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center pb-12">
+                <div class="h-12 w-12">
+                  <img
+                    src="{{ course.seller.imageUrl }}"
+                    alt
+                    class="h-full w-full object-cover overflow-hidden rounded-full"
+                  />
+                </div>
+                <p class="text-indigo-200 font-bold ml-3">
+                  {{ course.seller.firstName }} {{ course.seller.lastName }}
+                  <br />
+                  <span class="text-indigo-200 text-base font-light">{{
+                    course.seller.company
+                  }}</span>
+                </p>
+              </div>
+            </div>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center pb-12">
+                <button
+                  [routerLink]="['/courses/', course._id]"
+                  class="rounded px-3 py-2 m-1 border-b-4 border-l-2 shadow-lg bg-yellow-600 border-yellow-600 text-white"
+                >
+                  <fa-icon [icon]="faEye" class="mr-2"></fa-icon>
+                  View Courses
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </figure>
+    </div>
+    <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 sm:block hidden">
+      <img
+        class="object-cover object-center rounded"
+        alt="hero"
+        src="{{ course.imageUrl }}"
+      />
+    </div>
+  </div>
+</span>
